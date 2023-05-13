@@ -1,12 +1,13 @@
 import { SoldIceCream, boughtIcecream } from "./iceCreamSlice";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { RootState } from "../../app/store";
 
 const IceCreanView = () => {
   const [number, setVallue] = React.useState<number>(1);
 
   const NumberOfIcecream = useAppSelector(
-    (state) => state.iceCreame.NumberOfIcecream
+    (state: RootState) => state.iceCreame.NumberOfIcecream
   );
   const dispatch = useAppDispatch();
   return (
